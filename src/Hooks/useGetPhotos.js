@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const accessKey = process.env.REACT_APP_CLIENT_ID;
 
@@ -48,9 +48,11 @@ const useGetPhotos = () => {
         }
     }
 
+    const getPhotosRef = useRef(getPhotos);
+
     useEffect(() => {
         const fetchData = async () => {
-            await getPhotos("");
+            await getPhotosRef.current("");
         };
         fetchData();
     }, []);
