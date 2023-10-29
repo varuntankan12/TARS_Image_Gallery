@@ -10,21 +10,29 @@ const useGetPhotos = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [issearcheddata, setIsearchedData] = useState(false);
     const [prevsearch, setPrevSearch] = useState("no search");
+    const [page, setPage] = useState(1);
 
     const getPhotos = async (search) => {
         setIsLoading(true);
         try {
             if (search !== "") {
-                const response = await axios.get(`https://api.unsplash.com/photos/random?query=${search}&count=18`, {
+                if (prevsearch === search) {
+                    setPage(page + 1);
+                }
+                else {
+                    setPage(1);
+                }
+                const response = await axios.get(`https://api.unsplash.com/search/photos?query=${search}&page=${page}&per_page=18`, {
                     headers: {
                         Authorization: `Client-ID ${accessKey}`
                     }
                 });
                 if (prevsearch === search) {
-                    setSearchResponseData(prev => [...prev, response.data]);
+                    setSearchResponseData(prev => [...prev, response.data.results]);
                 }
                 else {
-                    setSearchResponseData([response.data]);
+                    setSearchResponseData([response.data.results]);
+                    console.log(response.data.results);
                     setPrevSearch(search);
                 }
 
@@ -44,7 +52,7 @@ const useGetPhotos = () => {
         } catch (error) {
             console.error(error);
             setIsLoading(false);
-            setResponseData(null);
+            setResponseData([]);
         }
     }
 

@@ -3,8 +3,9 @@ import { AiOutlineClose } from "react-icons/ai";
 import { BsInfoCircle, BsInstagram, BsShare } from 'react-icons/bs';
 import { TiThumbsUp } from 'react-icons/ti';
 import { FiTwitter } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
-const PopupModel = ({ darkmode, imagedata, closeModal }) => {
+const PopupModel = ({ darkmode, imagedata, closeModal, getPhotos, setSearchItem }) => {
 
     const handleClickOutside = (event) => {
         const datadiv = document.getElementById('datadiv');
@@ -14,6 +15,12 @@ const PopupModel = ({ darkmode, imagedata, closeModal }) => {
             closeModal();
         }
     };
+
+    function search(title) {
+        closeModal();
+        setSearchItem(title);
+        getPhotos(title);
+    }
 
     const download = (url) => {
         fetch(url, {
@@ -64,16 +71,16 @@ const PopupModel = ({ darkmode, imagedata, closeModal }) => {
                 <div className="lg:px-6 rounded-b-2xl mb-3 lg:m-0">
                     <div className='flex justify-between items-center w-full'>
                         <div className='flex flex-col lg:flex-row lg:gap-2 lg:items-center'>
-                            <div className='flex items-center'>
+                            <Link to={`https://unsplash.com/@${imagedata.user.username}`} target='_blank' className='flex items-center'>
                                 <img src={imagedata.user.profile_image.medium} alt="user" className='h-[46px] w-[46px] rounded-full object-cover m-2 lg:my-5' />
                                 <div className='flex flex-col justify-between lg:h-[32px] items-start'>
                                     <h3 className={`text-[14px] font-bold ${darkmode ? "text-[#E5E5E5]" : "text-color-2-dark"} font-[Montserrat]`}>{imagedata.user.name}</h3>
-                                    <p className='text-[10px] leading-[15px] font-semibold font-[poppins] italic text-[#A7A7A7] '>@{imagedata.user.username}</p>
+                                    <p className='text-[10px] leading-[15px] font-semibold font-[poppins] italic text-[#A7A7A7] cursor-pointer'>@{imagedata.user.username}</p>
                                 </div>
-                            </div>
+                            </Link>
                             <div className='flex lg:gap-4 lg:mx-4 gap-1 mx-2'>
-                                {imagedata.user.social.instagram_username && <button className='text-[#A7A7A7] text-xs lg:text-base flex items-center'><BsInstagram />/{imagedata.user.social.instagram_username}</button>}
-                                {imagedata.user.social.twitter_username && <button className='text-[#A7A7A7] text-xs lg:text-base flex items-center'><FiTwitter />/{imagedata.user.social.twitter_username}</button>}
+                                {imagedata.user.social.instagram_username && <Link to={`https://instagram.com/${imagedata.user.social.instagram_username}`} target='_blank' className='text-[#A7A7A7] text-xs lg:text-base flex items-center'><BsInstagram />/{imagedata.user.social.instagram_username}</Link>}
+                                {imagedata.user.social.twitter_username && <Link to={`https://twitter.com/${imagedata.user.social.twitter_username}`} target='_blank' className='text-[#A7A7A7] text-xs lg:text-base flex items-center'><FiTwitter />/{imagedata.user.social.twitter_username}</Link>}
                             </div>
                         </div>
                         <div className='flex flex-col justify-center gap-2 mr-2'>
@@ -92,7 +99,7 @@ const PopupModel = ({ darkmode, imagedata, closeModal }) => {
                             <h3 className={`text-[14px] font-bold ${darkmode ? "text-[#E5E5E5]" : "text-color-2-dark"} py-1`}>Related Tags</h3>
                             <div className='flex gap-2 flex-wrap my-2'>
                                 {imagedata.tags.map((tag, index) => (
-                                    <button key={index} className='lg:text-[12px] font-medium rounded-md bg-[#ECECEC] text-[#4F4F4F] lg:px-4 lg:py-2 font-[Montserrat] text-sm px-[10px] py-[5px]'>{tag.title}</button>
+                                    <button onClick={() => { search(tag.title) }} key={index} className='lg:text-[12px] font-medium rounded-md bg-[#ECECEC] text-[#4F4F4F] lg:px-4 lg:py-2 font-[Montserrat] text-sm px-[10px] py-[5px]'>{tag.title}</button>
                                 ))}
                             </div>
                         </div>

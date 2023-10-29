@@ -24,11 +24,11 @@ function App() {
     }
 
     return (
-        <div className={`${darkmode ? "bg-color-1-dark" : "bg-color-1-light"}`}>
+        <div className={`${darkmode ? "bg-color-1-dark" : "bg-color-1-light"} overflow-x-hidden`}>
             <Navbar darkmode={darkmode} setDarkMode={setDarkMode} searchitem={searchitem} setSearchItem={setSearchItem} getPhotos={getPhotos}></Navbar>
 
             {showModal && imagedata && (
-                <PopupModel darkmode={darkmode} imagedata={imagedata} closeModal={closeModal} />
+                <PopupModel darkmode={darkmode} imagedata={imagedata} closeModal={closeModal} getPhotos={getPhotos} setSearchItem={setSearchItem} />
             )}
 
             <Routes>
