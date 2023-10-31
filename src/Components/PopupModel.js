@@ -59,7 +59,7 @@ const PopupModel = ({ darkmode, imagedata, closeModal, getPhotos, setSearchItem 
                     <AiOutlineClose className='h-2 w-2 lg:h-4 lg:w-4' />
                 </div>
                 <div className='relative rounded-t-2xl overflow-hidden w-full lg:max-w[945px]'>
-                    <img src={imagedata.urls.full} alt={imagedata.alt_description} className='w-[380px] aspect-square lg:w-[945px] lg:aspect-[945/482] object-cover' />
+                    <img src={imagedata.urls.regular} alt={imagedata.alt_description} className='w-[380px] aspect-square lg:w-[945px] lg:aspect-[945/482] object-cover' />
                     <div className='absolute left-0 lg:left-[25px] bottom-[15px] lg:bottom-[10px] flex justify-end lg:justify-between items-center lg:w-[900px] w-full'>
                         <div className='flex gap-4 lg:m-5 mx-2'>
                             <button className='text-[#ECECEC] font-semibold border-[1px] lg:py-[7px] lg:px-[10px] rounded-[3.29px] lg:min-w-[60px] flex items-center gap-1 px-2 py-1 text-sm'><BsShare />Share</button>

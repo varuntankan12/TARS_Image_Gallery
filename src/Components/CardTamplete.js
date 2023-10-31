@@ -4,11 +4,20 @@ import ImageCard from './ImageCard';
 const CardTamplete = ({ darkmode, data, openModal }) => {
 
     const dataarray = data;
-    if(data === null){
-        return(
+    if (data === null) {
+        return (
             <div className='h-full mt-8 flex flex-col gap-2 justify-center items-center'>
                 <p className={`text-3xl lg:text-5xl ${darkmode ? "text-[#E5E5E5]" : "text-color-2-dark"} font-[Montserrat]`}>API Fetch <span className="text-red-800 ">"Error"</span></p>
                 <p className={`text-2xl lg:text-3xl ${darkmode ? "text-[#E5E5E5]" : "text-color-2-dark"} font-[Montserrat]`}>May be you are Offline Check your connection.</p>
+            </div>
+        )
+    }
+
+    if (data.length < 18) {
+        return(
+            <div className='h-full mt-8 flex flex-col gap-2 justify-center items-center'>
+                <p className={`text-3xl lg:text-5xl ${darkmode ? "text-[#E5E5E5]" : "text-color-2-dark"} font-[Montserrat]`}><span className="text-red-800 text-5xl font-semibold">Sorry</span> Could not GET this data...</p>
+                <p className={`text-2xl lg:text-3xl ${darkmode ? "text-[#E5E5E5]" : "text-color-2-dark"} font-[Montserrat]`}>Can't get data...</p>
             </div>
         )
     }

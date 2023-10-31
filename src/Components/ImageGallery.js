@@ -41,8 +41,8 @@ const ImageGallery = ({ darkmode, openModal, showModal, searchitem, setSearchIte
             }
             {issearcheddata ? searchdata.map((arr, index) => (<CardTamplete key={index} darkmode={darkmode} data={arr} openModal={openModal} />)) : data.map((arr, index) => (<CardTamplete key={index} darkmode={darkmode} data={arr} openModal={openModal} />))}
             {isLoading ? <Loadinganimation /> :
-                <div className='flex justify-center items-center w-screen max-w-[1440px] my-10'>
-                    <button onClick={() => { getPhotos(searchitem) }} className='text-2xl font-bold tracking-tight text-[#6dfc7bce] hover:text-[#4692c2e4]'>Load More..</button>
+                <div className='flex justify-center items-center w-screen max-w-[1440px] my-10 mb-[350px]'>
+                    <button onClick={() => { getPhotos(searchitem) }} className='text-2xl font-bold tracking-tight text-[#6dfc7bce] hover:text-[#4692c2e4]'>Show More..</button>
                 </div>
             }
         </div>

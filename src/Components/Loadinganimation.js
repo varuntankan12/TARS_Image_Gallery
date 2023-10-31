@@ -4,7 +4,7 @@ import { Player } from '@lottiefiles/react-lottie-player';
 const Loadinganimation = () => {
 
     return (
-        <div className='flex flex-col gap-2 justify-center items-center max-w-[350px] mx-auto'>
+        <div className='flex flex-col gap-2 justify-center items-center max-w-[350px] mx-auto mb-6'>
             <Player
                 autoplay={true}
                 loop={true}

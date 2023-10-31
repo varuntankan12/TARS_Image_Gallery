@@ -9,13 +9,19 @@ const useGetPhotos = () => {
     const [searchresponsedata, setSearchResponseData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [issearcheddata, setIsearchedData] = useState(false);
-    const [prevsearch, setPrevSearch] = useState("no search");
+    const [prevsearch, setPrevSearch] = useState("fruits%20images");
     const [page, setPage] = useState(1);
+
+    function replaceSpaces(inputString) {
+        return inputString.replace(/ /g, '%20');
+    }
+
 
     const getPhotos = async (search) => {
         setIsLoading(true);
         try {
             if (search !== "") {
+                replaceSpaces(search)
                 if (prevsearch === search) {
                     setPage(page + 1);
                 }
@@ -27,6 +33,7 @@ const useGetPhotos = () => {
                         Authorization: `Client-ID ${accessKey}`
                     }
                 });
+                console.log(response.data);
                 if (prevsearch === search) {
                     setSearchResponseData(prev => [...prev, response.data.results]);
                 }
