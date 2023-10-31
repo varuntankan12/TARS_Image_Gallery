@@ -20,7 +20,7 @@ const HomePageContent = ({ darkmode, searchitem, setSearchItem, getPhotos }) => 
             <div className='w-[350px] lg:w-[808px] mx-auto my-4'>
                 <div className='relative flex items-center'>
                     <label className='relative flex items-center'><BsSearch className='absolute left-[10px] opacity-50' />
-                        <input type='text' placeholder="Search Images Here" id='nav_search' value={searchitem} onChange={(event) => { searchChangeHandler(event.target.value) }} onKeyDown={handleKeyDown} className={`pl-10 h-[43px] w-[300px] lg:h-[56px] lg:w-[808px] rounded-l-md lg:rounded-r-md px-4 navsearchbar font-medium focus:outline-none focus:bg-color-2-light ${darkmode ? "bg-color-2-dark" : "bg-color-2-light text-color-3-light"}`}></input>
+                        <input type='text' placeholder="Search Images Here" id='nav_search' value={searchitem} onChange={(event) => { searchChangeHandler(event.target.value) }} onKeyDown={handleKeyDown} className={`pl-10 h-[43px] w-[300px] lg:h-[56px] lg:w-[808px] rounded-l-md lg:rounded-r-md px-4 navsearchbar font-medium focus:outline-none ${darkmode ? "bg-color-2-dark text-color-2-light" : "bg-color-2-light text-color-3-light"}`}></input>
                     </label>
                     <button onClick={() => { getPhotos(searchitem) }} className={`lg:hidden h-[43px] w-[50px] flex justify-center items-center rounded-r-md ${darkmode ? "bg-[#696868]" : "bg-[#f1f1f1]"}`}>
                         <BsSearch className='left-[10px]' />

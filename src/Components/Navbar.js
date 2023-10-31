@@ -42,7 +42,7 @@ const Navbar = ({ darkmode, setDarkMode, searchitem, setSearchItem, getPhotos })
                     <div className='relative w-[419px]'>
                         <div className='relative flex items-center'>
                             <label className='relative flex items-center'><BsSearch className='absolute left-[10px] opacity-50' />
-                                <input type='text' placeholder="Search Images Here" id='nav_search' value={searchitem} onChange={(event) => { searchChangeHandler(event.target.value) }} onKeyDown={handleKeyDown} className={`pl-10 h-[43px] w-[360px] rounded-l-md px-4 navsearchbar font-medium focus:outline-none focus:bg-color-2-light ${darkmode ? "bg-color-2-dark text-color-3-dark" : "bg-color-2-light text-color-3-light"}`}></input>
+                                <input type='text' placeholder="Search Images Here" id='nav_search' value={searchitem} onChange={(event) => { searchChangeHandler(event.target.value) }} onKeyDown={handleKeyDown} className={`pl-10 h-[43px] w-[360px] rounded-l-md px-4 navsearchbar font-medium focus:outline-none focus:bg-color-2-light ${darkmode ? "bg-color-2-dark text-color-2-light focus:text-color-1-dark" : "bg-color-2-light text-color-3-light"}`}></input>
                             </label>
                             <button onClick={() => { getPhotos(searchitem) }} className={`h-[43px] w-[60px] flex justify-center items-center rounded-r-md ${darkmode ? "bg-[#696868]" : "bg-[#f1f1f1]"}`}>
                                 <BsSearch className='left-[10px]' />

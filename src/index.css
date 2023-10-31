@@ -56,13 +56,9 @@
     height: 15px;
     width: 15px;
     left: 4px;
-    /* Adjust the left position for centering the indicator */
     bottom: 4px;
-    /* Adjust the bottom position for centering the indicator */
     background-color: white;
-    /* Set the color of the toggle indicator */
     border-radius: 50%;
-    /* Set the border-radius for a circular indicator */
     transition: transform 0.3s;
 }
 
