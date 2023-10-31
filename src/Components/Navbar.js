@@ -66,7 +66,7 @@ const Navbar = ({ darkmode, setDarkMode, searchitem, setSearchItem, getPhotos })
                 <div className='hidden lg:flex items-center'>
                     <label htmlFor='toggle' className={`text-sm font-bold font-[Montserrat] ${darkmode ? "text-color-3-dark" : "text-color-3-light"} px-2 cursor-pointer`}>Dark Mode</label>
                     <div className="toggle-container">
-                        <input type="checkbox" id="toggle" className="checkbox" onChange={(event) => { toggleDarkMode(event.target.checked) }} />
+                        <input type="checkbox" id="toggle" className="checkbox" checked={darkmode} onChange={(event) => { toggleDarkMode(event.target.checked) }} />
                         <label htmlFor="toggle" className="toggle"></label>
                     </div>
                 </div>

@@ -7,7 +7,7 @@ import useGetPhotos from "./Hooks/useGetPhotos";
 
 function App() {
 
-    const [darkmode,setDarkMode] = useState(false);
+    const [darkmode,setDarkMode] = useState(true);
     const [showModal, setShowModal] = useState(false);
     const [imagedata,setImageData] = useState(null);
     const [searchitem, setSearchItem] = useState("");
