@@ -5,6 +5,7 @@ import { TiThumbsUp } from 'react-icons/ti';
 import { FiTwitter } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 
+
 const PopupModel = ({ darkmode, imagedata, closeModal, getPhotos, setSearchItem }) => {
 
     const handleClickOutside = (event) => {

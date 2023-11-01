@@ -1,0 +1,53 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "name": "Install Dependencies",
+      "command": "npm install"
+    },
+    {
+      "command": "npm install react",
+      "name": "npm install react"
+    },
+    {
+      "command": "npm install react-router-dom ",
+      "name": "npm install react-router-dom "
+    },
+    {
+      "command": "npm install axios",
+      "name": "npm install axios"
+    },
+    {
+      "command": "npm install react-icons",
+      "name": "npm install react-icons"
+    },
+    {
+      "command": "npm install @lottiefiles/react-lottie-player",
+      "name": "npm install @lottiefiles/react-lottie-player"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "start": {
+      "name": "start",
+      "command": "npm run start",
+      "runAtStart": true
+    },
+    "build": {
+      "name": "build",
+      "command": "npm run build",
+      "runAtStart": false
+    },
+    "test": {
+      "name": "test",
+      "command": "npm run test",
+      "runAtStart": false
+    },
+    "eject": {
+      "name": "eject",
+      "command": "npm run eject",
+      "runAtStart": false
+    }
+  }
+}

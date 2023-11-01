@@ -3,6 +3,7 @@ import Loadinganimation from './Loadinganimation';
 import CardTamplete from './CardTamplete';
 import HomePageContent from './HomePageContent';
 
+
 const ImageGallery = ({ darkmode, openModal, showModal, searchitem, setSearchItem, data, searchdata, isLoading, issearcheddata, getPhotos }) => {
 
     let tagarray = [];

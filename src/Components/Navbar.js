@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineDarkMode } from "react-icons/md";
 
 
+
 const Navbar = ({ darkmode, setDarkMode, searchitem, setSearchItem, getPhotos }) => {
 
     const [isMenuVisible, setIsMenuVisible] = useState(false);

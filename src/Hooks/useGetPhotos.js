@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
 
+
 const accessKey = process.env.REACT_APP_CLIENT_ID;
 
 const useGetPhotos = () => {
